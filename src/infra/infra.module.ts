@@ -7,23 +7,26 @@ import { ListProfessorClassesByFilterUsecaseFactory } from './factories/usecases
 import { Class, ClassSchema } from './schemas/class.schema';
 import { environment, root, runtime } from './setup/configs';
 import { SeedModule } from './seed.module';
-import { Student, StudentSchema } from './schemas/student.shema';
+import { Student, StudentSchema } from './schemas/student.schema';
 import { ListStudentsFromClassByIdUsecaseFactory } from './factories/usecases/list-students-from-class-by-id.usecase.factory';
 import { ListStudentsFromClassByIdPortFactory } from './factories/ports/list-students-from-class-by-id.port.factory';
 import { UpdateStudentStatusPortFactory } from './factories/ports/update-studant-status.port.factory';
 import { CheckClassStatusUsecaseFactory } from './factories/usecases/check-class-status.usecase.factory';
+import { NoteAndFreqStudentService } from './factories/usecases/noteandfreq-student.usecase.factory';
 
 @Module({
   exports: [
     ListProfessorClassesByFilterUsecaseFactory,
     ListStudentsFromClassByIdUsecaseFactory,
     CheckClassStatusUsecaseFactory,
+    NoteAndFreqStudentService,
   ],
   providers: [
     // Usecases
     ListProfessorClassesByFilterUsecaseFactory,
     ListStudentsFromClassByIdUsecaseFactory,
     CheckClassStatusUsecaseFactory,
+    NoteAndFreqStudentService,
 
     // Ports
     ListProfessorClassesByFilterPortFactory,

@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Class } from '../class.schema';
-import { Student } from '../student.shema';
+import { Student } from '../student.schema';
 
 @Injectable()
 export class SeedService {
@@ -63,4 +63,11 @@ export class SeedService {
     console.log('Coleção turmaProfessor seeded com sucesso!');
     console.log('Coleção student seeded com sucesso!');
   }
+
+
+// //metodo para obetener los estudiantes desde la base de datos
+// async getStudents(): Promise<Student[]>{
+//   return this.studentModel.find().exec();
+// }
+
 }

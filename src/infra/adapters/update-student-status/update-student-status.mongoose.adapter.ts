@@ -4,7 +4,7 @@ import {
   UpdateStudentStatusPortInput,
   UpdateStudentStatusPortResult,
 } from '../../../domain/ports/update-student-status.port';
-import { StudentDocument } from '../../../infra/schemas/student.shema';
+import { StudentDocument } from '../../schemas/student.schema';
 
 export class UpdateStudentStatusMongooseAdapter implements UpdateStudentStatusPort {
   constructor(private readonly StudentModel: Model<StudentDocument>) {}
@@ -28,5 +28,5 @@ export class UpdateStudentStatusMongooseAdapter implements UpdateStudentStatusPo
       status: student.status,
       classCodeList: student.classCodeList.map((classId) => classId.toString()),
     };
-  }
+  } 
 }

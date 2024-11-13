@@ -14,7 +14,14 @@ export class ListStudentsFromClassByIdController {
     const usecase = this.usecaseFactory.getInstance();
 
     const students = await usecase.execute({ classId });
+  //  const students : ListStudentsFromClassByIdPortResult = await usecase.execute({ classId }); //
+console.log('estudiantes obtenidos', students)           //
 
+if(!students || students.length === 0){                             //
+  console.log ('No hay estudiantes para esta clase, controller', classId);  //
+  return [];
+}
+  
     return this.mapToResponseBody(students);
   }
 
@@ -23,6 +30,7 @@ export class ListStudentsFromClassByIdController {
       name: student.name,
       id: student.id,
       status: student.status,
+      classCodeList: student.classCodeList,
     }));
   }
 }

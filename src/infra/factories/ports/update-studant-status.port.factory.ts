@@ -1,6 +1,6 @@
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Student, StudentDocument } from '../../../infra/schemas/student.shema';
+import { Student, StudentDocument } from '../../schemas/student.schema';
 import { UpdateStudentStatusMongooseAdapter } from '../../../infra/adapters/update-student-status/update-student-status.mongoose.adapter';
 
 export class UpdateStudentStatusPortFactory {

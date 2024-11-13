@@ -16,6 +16,7 @@ export class ListProfessorClassesByFilterController {
     const classes: ListProfessorClassesByFilterPortResult = await usecase.execute({ professorId });
 
     return this.mapToResponseBody(classes);
+    console.log('aqui mis profesores', professorId)
   }
 
   private mapToResponseBody(classes: ListProfessorClassesByFilterPortResult): ClassResponseBody[] {

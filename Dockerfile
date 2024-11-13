@@ -18,3 +18,6 @@ COPY ["envs/docker", "./envs/docker"]
 RUN npm run build
 
 CMD [ "npm", "run", "start" ]
+
+# Copia todos los archivos del proyecto al contenedor
+COPY . /opt/microservice
